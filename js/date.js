@@ -131,8 +131,7 @@ function getZoom(time) {
     let today = new Date();
     let day = today.getDay();
     console.log(day);
-    //timetableNow = timetable[day][time];
-    timetableNow = 20;
+    timetableNow = timetable[day][time];
     console.log(timetableNow);
     document.getElementById('subject').innerText = subject[timetableNow];
 
