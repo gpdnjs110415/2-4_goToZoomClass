@@ -1,11 +1,11 @@
 let days = ['일', '월', '화', '수', '목', '금', '토'];
 let period = ['조회', '1교시', '2교시', '3교시', '4교시', '점심시간', '5교시', '6교시', '7교시', '종례', '자습'];
-let teacher = ['김태', '이효', '장문', '이경', '함지', '김종', '정지', '장재', '조혜', '이재', '원미', '박경', '박성', '조혜', '동아리', '김태', '김태', '김태', '', ''];
+let teacher = ['김태', '이효', '장문', '이경', '함지', '김종', '정지', '장재', '조혜', '이재', '원미', '박경', '박성', '조혜', '', '김태', '김태', '김태', '', '', '김상'];
 let zoomId = ['8134411742', '7987833794', '7965443330', '7126847915', '6863031340', '718015132', '7722593481', '7223454774', '3650046422', '7864104388', '5977904321', '3955689232', '3335559622', '3650046422', '', '8134411742', '8134411742', '8134411742', '', '#'];
-let subject = ['문학', '공업수학', '수학2', '영어1', '응용프로그래밍 개발 / 정보보호 관리', '화학1', '중국어1', '성공적인 직업생활', '응용프로그래밍 화면구현', '운동과 건강', '정보보호 관리', '진로', '정보통신', '자료구조', 'CA', 'HR', '', '', '점심시간', ''];
+let subject = ['문학', '공업수학', '수학2', '영어1', '응용프로그래밍 개발 / 정보보호 관리', '화학1', '중국어1', '성공적인 직업생활', '응용프로그래밍 화면구현', '운동과 건강', '정보보호 관리', '진로', '정보통신', '자료구조', 'CA', 'HR', '', '', '점심시간', '', '물리'];
 
-//[요일][교시]
-let timetable = [
+//2학기 시간표 ([요일][교시])
+/*let timetable = [
     ['19', '19', '19', '19', '19', '19', '19', '19', '19', '19', '19'],
     ['16', '7', '5', '9', '4', '18', '4', '3', '12', '17', '19'],
     ['16', '13', '1', '7', '0', '18', '2', '11', '14', '17', '19'],
@@ -13,24 +13,23 @@ let timetable = [
     ['16', '8', '0', '9', '13', '18', '5', '11', '15', '17', '19'],
     ['16', '12', '4', '4', '1', '18', '6', '5', '17', '19'],
     ['19', '19', '19', '19', '19', '19', '19', '19', '19', '19', '19']
+];*/
+
+//1학기 시간표 ([요일][교시])
+let timetable = [
+    ['19', '19', '19', '19', '19', '19', '19', '19', '19', '19', '19'],
+    ['19', '19', '19', '19', '19', '19', '19', '19', '19', '19', '19'],
+    ['19', '19', '19', '19', '19', '19', '19', '19', '19', '19', '19'],
+    ['19', '19', '19', '19', '19', '19', '19', '19', '19', '19', '19'],
+    ['16', '8', '12', '3', '20', '18', '2', '4', '14', '17', '19'],
+    ['16', '4', '2', '0', '13', '20', '9', '11', '17', '19'],
+    ['19', '19', '19', '19', '19', '19', '19', '19', '19', '19', '19']
 ];
 
 //zoom 링크
 let zoom = 'https://zoom.us/j/' //zoom기본 링크
 
-let korean = zoom + '8134411742'; //김태철 0
-let math_g = zoom + '7987833794'; //이효현 1
-let math = zoom + '7965443330'; //장문석 2
-let english = zoom + '7126847915'; //이경은 3
-let java = zoom + '6863031340'; // 함지연 4
-let science = zoom + '4361766687'; // 김종수 5
-let china = zoom + '7722593481'; // 정지훈 6
-let job = zoom + '7223454774'; //장재원 7
-let data_web = zoom + '3650046422'; //조혜연 8
-let pe = zoom + '7864104388'; //이재민 9
-let defence = zoom + '5977904321'; //원미경 10
-let dream = zoom + '3955689232'; //박경수 11
-let infom_t = zoom + '3335559622'; //박성수 12
+//김태철 0 이효현 1 장문석 2 이경은 3 함지연 4 김종수 5 정지훈 6 장재원 7 조혜연(응화) 8 이재민 9 원미경 10 박경수 11 박성수 12 자료구조 13 CA 14 HR 15 점심시간 18 김상욱 20
 
 
 function getTimeInfo() {
@@ -132,7 +131,8 @@ function getZoom(time) {
     let today = new Date();
     let day = today.getDay();
     console.log(day);
-    timetableNow = timetable[day][time];
+    //timetableNow = timetable[day][time];
+    timetableNow = 20;
     console.log(timetableNow);
     document.getElementById('subject').innerText = subject[timetableNow];
 
@@ -141,6 +141,10 @@ function getZoom(time) {
         document.getElementById('enterZoomBtn').innerHTML = '<div id="enterZoom"><a id="zoomLink" href="https://zoom.us/j/5977904321" target="_blank">응용프로그래밍 개발</a></div><div id="enterZoom" style="margin-top:1rem;"><a id="zoomLink" href="https://zoom.us/j/6863031340" target="_blank">정보보호 관리</a></div>'
     } else if (timetableNow == 14) {
         document.getElementById('teacher').innerText = teacher[timetableNow];
+        document.getElementById('enterZoomBtn').innerHTML = '';
+    } else if (timetableNow == 20) {
+        document.getElementById('zoomLink').href = 'https://www.youtube.com/channel/UCpzDb27kliojrkqg_rO7K0w';
+        document.getElementById('teacher').innerText = teacher[timetableNow] + '* T';
     }
     else if (timetableNow < 18) {
         document.getElementById('teacher').innerText = teacher[timetableNow] + '* T';
