@@ -51,55 +51,55 @@ function getTimeInfo() {
     //몇교시?
     let time;
     if (hour == 8) {
-        if (minute <= 55) {
+        if (minute <= 54) {
             time = 0;
         } else {
             time = 1;
         }
     } else if (hour == 9) {
-        if (minute >= 00 && minute <= 50) {
+        if (minute >= 00 && minute <= 49) {
             time = 1;
         } else {
             time = 2;
         }
     } else if (hour == 10) {
-        if (minute >= 00 && minute <= 50) {
+        if (minute >= 00 && minute <= 49) {
             time = 2;
         } else {
             time = 3;
         }
     } else if (hour == 11) {
-        if (minute >= 00 && minute <= 50) {
+        if (minute >= 00 && minute <= 49) {
             time = 3;
         } else {
             time = 4;
         }
     } else if (hour == 12) {
-        if (minute >= 00 && minute <= 50) {
+        if (minute >= 00 && minute <= 49) {
             time = 4;
         } else {
             time = 5;
         }
     } else if (hour == 13) {
-        if (minute >= 00 && minute <= 50) {
+        if (minute >= 00 && minute <= 49) {
             time = 5;
         } else {
             time = 6;
         }
     } else if (hour == 14) {
-        if (minute >= 00 && minute <= 40) {
+        if (minute >= 00 && minute <= 39) {
             time = 6;
         } else {
             time = 7;
         }
     } else if (hour == 15) {
-        if (minute >= 00 && minute <= 40) {
+        if (minute >= 00 && minute <= 39) {
             time = 7;
         } else {
             time = 8;
         }
     } else if (hour == 16) {
-        if (minute >= 00 && minute <= 40) {
+        if (minute >= 00 && minute <= 39) {
             time = 8;
         } else {
             time = 9;
@@ -117,7 +117,7 @@ function getTimeInfo() {
         leftTime = 50 - minute;
     }
     //쉬는시간이면 남은시간 출력
-    if (leftTime >= 0 && leftTime <= 9) {
+    if (leftTime >= 0 && leftTime <= 10) {
         document.getElementById('leftTime').innerText = '다음 수업까지 ' + leftTime + '분 남았어요!';
     } else { document.getElementById('leftTime').innerText = '  '; }
 
