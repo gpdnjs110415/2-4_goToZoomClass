@@ -141,7 +141,7 @@ function getZoom(time) {
     } else if (timetableNow == 14) {
         document.getElementById('teacher').innerText = teacher[timetableNow];
         document.getElementById('enterZoomBtn').innerHTML = '';
-    } else if (timetableNow < 18 && timetableNow == 20) {
+    } else if (timetableNow < 18 || timetableNow == 20) {
         document.getElementById('teacher').innerText = teacher[timetableNow] + '* T';
         document.getElementById('zoomLink').href = zoom + zoomId[timetableNow];
     } else {
