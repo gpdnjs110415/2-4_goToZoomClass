@@ -1,7 +1,7 @@
 let days = ['일', '월', '화', '수', '목', '금', '토'];
 let period = ['조회', '1교시', '2교시', '3교시', '4교시', '점심시간', '5교시', '6교시', '7교시', '종례', '자습'];
 let teacher = ['김태', '이효', '장문', '이경', '함지', '김종', '정지', '장재', '조혜', '이재', '원미', '박경', '박성', '조혜', '', '김태', '김태', '김태', '', '', '김상'];
-let zoomId = ['8134411742', '7987833794', '7965443330', '7126847915', '6863031340', '718015132', '7722593481', '7223454774', '3650046422', '7864104388', '5977904321', '3955689232', '3335559622', '3650046422', '', '8134411742', '8134411742', '8134411742', '', '#'];
+let zoomId = ['8134411742', '7987833794', '7965443330', '7126847915', '6863031340', '718015132', '7722593481', '7223454774', '3650046422', '7864104388', '5977904321', '3955689232', '3335559622', '3650046422', '', '8134411742', '8134411742', '8134411742', '', '7178015132'];
 let subject = ['문학', '공업수학', '수학2', '영어1', '응용프로그래밍 개발 / 정보보호 관리', '화학1', '중국어1', '성공적인 직업생활', '응용프로그래밍 화면구현', '운동과 건강', '정보보호 관리', '진로', '정보통신', '자료구조', 'CA', 'HR', '', '', '점심시간', '', '물리'];
 
 //2학기 시간표 ([요일][교시])
@@ -141,11 +141,7 @@ function getZoom(time) {
     } else if (timetableNow == 14) {
         document.getElementById('teacher').innerText = teacher[timetableNow];
         document.getElementById('enterZoomBtn').innerHTML = '';
-    } else if (timetableNow == 20) {
-        document.getElementById('zoomLink').href = 'https://www.youtube.com/channel/UCpzDb27kliojrkqg_rO7K0w';
-        document.getElementById('teacher').innerText = teacher[timetableNow] + '* T';
-    }
-    else if (timetableNow < 18) {
+    } else if (timetableNow < 18) {
         document.getElementById('teacher').innerText = teacher[timetableNow] + '* T';
         document.getElementById('zoomLink').href = zoom + zoomId[timetableNow];
     } else {
