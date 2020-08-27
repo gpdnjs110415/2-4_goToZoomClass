@@ -112,9 +112,9 @@ function getTimeInfo() {
 
     //다음교시까지 남은 시간 체크
     if (time <= 6 && time > 0) {
-        leftTime = 50 - minute;
+        leftTime = 60 - minute;
     } else if (time > 6 && time < 10) {
-        leftTime = 40 - minute;
+        leftTime = 50 - minute;
     }
     //쉬는시간이면 남은시간 출력
     if (leftTime >= 0 && leftTime <= 9) {
