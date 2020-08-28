@@ -11,7 +11,7 @@ let timetable = [
     ['16', '13', '1', '7', '0', '18', '2', '11', '14', '17', '19'],
     ['16', '5', '8', '1', '2', '18', '6', '3', '17', '17', '19'],
     ['16', '8', '0', '9', '13', '18', '5', '11', '15', '17', '19'],
-    ['16', '12', '4', '4', '1', '18', '6', '5', '17', '19'],
+    ['16', '2', '12', '4', , '4', '18', '1', '6', '5', '17', '19'],
     ['19', '19', '19', '19', '19', '19', '19', '19', '19', '19', '19']
 ];
 
@@ -28,6 +28,12 @@ let timetable = [
 
 //zoom 링크
 let zoom = 'https://zoom.us/j/' //zoom기본 링크
+var platForm = navigator.platform;
+if (platForm.match('Win16|Win32') != null) {
+    zoom = 'zoommtg://zoom.us/join?pwd=dimigo&conf=';
+} else {
+    zoom = 'zoomus://join?pwd=dimigo&conf='
+}
 
 //김태철 0 이효현 1 장문석 2 이경은 3 함지연 4 김종수 5 정지훈 6 장재원 7 조혜연(응화) 8 이재민 9 원미경 10 박경수 11 박성수 12 자료구조 13 CA 14 HR 15 점심시간 18 김상욱 20
 
@@ -158,7 +164,18 @@ function getZoom(time) {
     }
 }
 
+function showTimetable(num) {
+    if (num == '1') {
+        document.getElementById('timetable').style.opacity = '1';
+        document.getElementById('timetableBtn').style.opacity = '0';
+    } else {
+        document.getElementById('timetable').style.opacity = '0';
+        document.getElementById('timetableBtn').style.opacity = '1';
+    }
+}
+
 function init() {
+
     getTimeInfo();
     setInterval(getTimeInfo, 1000);
 }
