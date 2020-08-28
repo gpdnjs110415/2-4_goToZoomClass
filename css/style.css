@@ -129,6 +129,14 @@ body{
 }
 
 
+footer span{
+    color:rgba(118, 113, 113, 0.411);
+    font-size:0.5rem;
+}
+footer{
+    margin-top:3rem;
+}
+
 
 @media ( max-width: 768px ) {
     *{
