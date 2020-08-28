@@ -30,7 +30,7 @@ let timetable = [
 let zoom = 'https://zoom.us/j/' //zoom기본 링크
 var platForm = navigator.platform;
 if (platForm.match('Win16|Win32') != null) {
-    zoom = 'zoommtg://zoom.us/join?pwd=dimigo&conf=';
+    zoom = 'zoommtg://zoom.us/join?pwd=dimigo&confno=';
 } else {
     zoom = 'zoomus://join?pwd=dimigo&conf='
 }
