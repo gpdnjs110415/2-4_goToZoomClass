@@ -168,9 +168,11 @@ function showTimetable(num) {
     if (num == '1') {
         document.getElementById('timetable').style.opacity = '1';
         document.getElementById('timetableBtn').style.opacity = '0';
+        document.getElementById('covidSurv').style.opacity = '0';
     } else {
         document.getElementById('timetable').style.opacity = '0';
         document.getElementById('timetableBtn').style.opacity = '1';
+        document.getElementById('covidSurv').style.opacity = '1';
     }
 }
 
