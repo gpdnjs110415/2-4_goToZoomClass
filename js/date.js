@@ -137,6 +137,7 @@ function getTimeInfo() {
 
 //교시를 주면 링크를 가져옴
 function getZoom(time) {
+
     let today = new Date();
     let day = today.getDay();
     console.log(day);
@@ -146,10 +147,10 @@ function getZoom(time) {
 
     if (timetableNow == 4) {
         document.getElementById('teacher').innerText = '함지* T / 원미* T';
-        document.getElementById('enterZoomBtn').innerHTML = '<div id="enterZoom"><a id="zoomLink" href="https://zoom.us/j/6863031340" target="_blank">응용프로그래밍 개발</a></div><div id="enterZoom" style="margin-top:1rem;"><a id="zoomLink" href="https://zoom.us/j/5977904321" target="_blank">정보보호 관리</a></div>'
+        document.getElementById('enterZoomBtn').innerHTML = '<div id="enterZoom"><a id="zoomLink" href="' + zoom + '6863031340" target="_blank">응용프로그래밍 개발</a></div><div id="enterZoom" style="margin-top:1rem;"><a id="zoomLink" href="' + zoom + '5977904321" target="_blank">정보보호 관리</a></div>'
     } else if (timetableNow == 14) {
         document.getElementById('teacher').innerText = teacher[timetableNow];
-        document.getElementById('enterZoomBtn').innerHTML = '<div id="enterZoom"><a id="zoomLink" href="https://zoom.us/j/8134411742" target="_blank">김태* T 링크 들어가기</a></div>';
+        document.getElementById('enterZoomBtn').innerHTML = '<div id="enterZoom"><a id="zoomLink" href="' + zoom + '8134411742" target="_blank">김태* T 링크 들어가기</a></div>';
     } else if (timetableNow < 18 || timetableNow == 20) {
         document.getElementById('teacher').innerText = teacher[timetableNow] + '* T';
         document.getElementById('zoomLink').href = zoom + zoomId[timetableNow];
