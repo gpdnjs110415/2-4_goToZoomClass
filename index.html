@@ -16,6 +16,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>📘 2-4 ZOOM 수업 바로가기 📘</title>
     <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/popup.css">
 </head>
 
 <body>
@@ -28,8 +29,22 @@
             </div>
         </header>
     -->
+    <div class="classChoicePopup" onclick="classChoicePopup(0);">
+        <div id="popup">
+            <div>우리반 선택하기</div>
+            <div id="popupBtn">
+                <div id="class1" onclick="timetableChange(1);">1반</div>
+                <div id="class2" onclick="timetableChange(2);">2반</div>
+                <div id="class3" onclick="timetableChange(3);">3반</div>
+                <div id="class4" onclick="timetableChange(4);">4반</div>
+                <div id="class5" onclick="timetableChange(5);">5반</div>
+                <div id="class6" onclick="timetableChange(6);">6반</div>
+            </div>
+        </div>
 
+    </div>
     <div class="container">
+        <div id="classNum" onclick="classChoicePopup(1);">4반</div>
         <div id="date">2020년 0월 0일</div>
         <div id="now">오전 0시 0분</div>
         <div class="subjectInfo">
@@ -60,7 +75,7 @@
 
         <div id="timetable">
             <p onclick="showTimetable(0);">X</p>
-            <img src="./image/timetable.png">
+            <img src="./image/4.png">
         </div>
 
     </div>

@@ -58,6 +58,16 @@ body{
     margin: 3rem 0rem 2rem 0rem;
 }
 
+#classNum{
+    font-size:0.7rem;
+    border:1px solid rgb(45, 140, 255);
+    border-radius: 2rem;
+    padding: 0.2rem 0.7rem;
+    margin-bottom: 0.7rem;
+    background-color :white;
+    color: rgb(45, 140, 255);
+}
+
 #teacher{
     padding-top: 0.7rem;
     font-size:1rem;
