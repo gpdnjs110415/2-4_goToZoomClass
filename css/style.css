@@ -74,6 +74,7 @@ body{
 }
 
 #enterZoom{
+    
     display:flex;
     justify-content: center;
     align-items: center;
@@ -84,6 +85,7 @@ body{
 }
 #enterZoom a{
     width: 100%;
+    z-index: 1;
     text-align: center;
     color: white;
     text-decoration: none;
